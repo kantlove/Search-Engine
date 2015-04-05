@@ -1,0 +1,33 @@
+﻿<Window x:Class="SearchEngine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sparrow="http://sparrowtoolkit.codeplex.com/wpf"
+        xmlns:local="clr-namespace:SearchEngine"
+        Title="MainWindow" Height="450" Width="550" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <sparrow:SparrowChart x:Name="chartView" Margin="20" SmoothingMode="HighSpeed">
+            <!--<sparrow:SparrowChart.DataContext>
+                <local:GraphDrawer/>
+            </sparrow:SparrowChart.DataContext>-->
+            <sparrow:SparrowChart.XAxis>
+                <sparrow:LinearXAxis/>
+            </sparrow:SparrowChart.XAxis>
+            <sparrow:SparrowChart.YAxis>
+                <sparrow:LinearYAxis MaxValue="100"/>
+            </sparrow:SparrowChart.YAxis>
+            <!--<sparrow:LineSeries PointsSource="{Binding Data}" XPath="X" YPath="Y"/>-->
+            <sparrow:LineSeries x:Name="lineSeries" Stroke="#FF5B5BFF"/>
+            <sparrow:AreaSeries x:Name="areaSeries" Fill="#999696FF" Stroke="#99C0C0FF"/>
+        </sparrow:SparrowChart>
+
+        <Grid x:Name="gridCover" Background="White">
+            <TextBlock x:Name="tbStatus" TextWrapping="Wrap"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center">
+                <Run x:Name="tbTitle" Text="Welcome!" FontSize="36" FontFamily="Segoe WP"/>
+                <LineBreak/>
+                <Run x:Name="tbSubtitle" Text="Search Engine" FontSize="25" FontFamily="Segoe WP SemiLight"/>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Window>
